@@ -65,9 +65,11 @@
             <div class="meta-separator"></div><a href="/property-category/residential"
               class="property-post-category">Residential</a>
           </div>
-          <h1 class="banner-title">Grandma's Space</h1>
+          <h1 class="banner-title">Cozy Quarters</h1>
           <div class="property-post-content-wrap">
-            <p>We've named this cozy space "Grandma's Space" as it was meticulously crafted with our beloved grandmother in mind – a haven for anyone on wheels seeking supreme comfort tailored to their needs.</p>
+            <p>Inflation-proof and built to perfection, the Cozy Quarters is the ultimate tiny home. Designed with the modern homeowner in mind, this abode offers supreme 
+comfort and customization at a fraction of the cost of traditional housing. As the cost of living continues to rise, the Cozy Quarters stands as a testament to the new trend 
+in affordable, sustainable living – the tiny home revolution.</p>
           </div>
         </div>
         <div class="property-post-details-wrap">
@@ -100,7 +102,7 @@
           src="images/cozy-quarters.jpg"
           sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 96vw, (max-width: 1919px) 97vw, 1710px"
           srcset="images/cozy-quarters.jpg"
-          class="images/grandmas_tiny_home.jpg">
+          class="images/cozy-quarters.jpg">
         <div style="width: 0%; height: 100%; opacity: 1;" class="property-image-overlay"></div>
       </div>
     </div>
