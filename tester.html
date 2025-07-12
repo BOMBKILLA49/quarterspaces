@@ -191,12 +191,13 @@
     }
 
     .form-group img {
-      width: 100px;
+      width: 150px;
       height: auto;
       margin-left: 20px;
       border: 1px solid #dcdcdc;
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
       transition: opacity 0.3s;
     }
 
@@ -249,6 +250,71 @@
       margin-top: 20px;
     }
 
+    /* Preview Section Styles */
+    .preview-section {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .preview-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .preview-image {
+      max-width: 600px;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .preview-text {
+      font-size: 16px;
+      color: #7f8c8d;
+      margin-top: 20px;
+    }
+
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 600px;
+      width: 90%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 30px;
+      color: #ffffff;
+      cursor: pointer;
+      background: rgba(44, 62, 80, 0.7);
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(44, 62, 80, 0.9);
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
       .centered-container {
@@ -281,11 +347,15 @@
       .form-group img {
         margin-left: 0;
         margin-top: 10px;
-        width: 80px;
+        width: 120px;
       }
 
       .form-button {
         width: 100%;
+      }
+
+      .preview-image {
+        max-width: 100%;
       }
 
       .slide img {
@@ -407,12 +477,13 @@
       </div>
     </div>
 
-    <!-- Updated Contact Form Section with Images and Pricing -->
+    <!-- Updated Contact Form Section with Lightbox and Preview -->
     <section class="form-section">
       <div class="form-container">
         <h2 class="form-title">Customize Your E.Z. Space</h2>
         <p class="form-subtitle">Select your preferred options for your tiny home and see the total price</p>
         <form method="post" action="https://forms.un-static.com/forms/190a5717dbf566ab8a918224f4564bebac8b5bc6">
+          <input type="hidden" name="total_price" id="total-price-input">
           <div class="form-group">
             <label for="starlink">Starlink ($0 - $2,000)</label>
             <select class="form-control" id="starlink" name="starlink" aria-label="Select Starlink option">
@@ -420,7 +491,7 @@
               <option value="basic" data-price="1000">Basic ($1,000)</option>
               <option value="advanced" data-price="2000">Advanced ($2,000)</option>
             </select>
-            <img src="images/starlink-none.jpg" alt="Starlink Option" class="option-image" id="starlink-image">
+            <img src="images/starlink-none.jpg" alt="Starlink Option" class="option-image" id="starlink-image" data-lightbox="starlink">
           </div>
           <div class="form-group">
             <label for="waterSystem">Water System ($0 - $2,500)</label>
@@ -429,7 +500,7 @@
               <option value="standard_tank" data-price="1500">Standard Tank ($1,500)</option>
               <option value="large_tank" data-price="2500">Large Tank ($2,500)</option>
             </select>
-            <img src="images/water-system-none.jpg" alt="Water System Option" class="option-image" id="waterSystem-image">
+            <img src="images/water-system-none.jpg" alt="Water System Option" class="option-image" id="waterSystem-image" data-lightbox="waterSystem">
           </div>
           <div class="form-group">
             <label for="toilet">Toilet ($0 - $1,200)</label>
@@ -437,7 +508,7 @@
               <option value="none" data-price="0">None</option>
               <option value="composting" data-price="1200">Composting Off-Grid Toilet ($1,200)</option>
             </select>
-            <img src="images/toilet-none.jpg" alt="Toilet Option" class="option-image" id="toilet-image">
+            <img src="images/toilet-none.jpg" alt="Toilet Option" class="option-image" id="toilet-image" data-lightbox="toilet">
           </div>
           <div class="form-group">
             <label for="solar">Solar ($0 - $3,500)</label>
@@ -446,7 +517,7 @@
               <option value="standard" data-price="2000">Standard Panel ($2,000)</option>
               <option value="larger" data-price="3500">Larger Panel ($3,500)</option>
             </select>
-            <img src="images/solar-none.jpg" alt="Solar Option" class="option-image" id="solar-image">
+            <img src="images/solar-none.jpg" alt="Solar Option" class="option-image" id="solar-image" data-lightbox="solar">
           </div>
           <div class="form-group">
             <label for="frontDoor">Front Door ($500 - $800)</label>
@@ -454,7 +525,7 @@
               <option value="standard" data-price="500">Standard ($500)</option>
               <option value="modern" data-price="800">Modern ($800)</option>
             </select>
-            <img src="images/front-door-standard.jpg" alt="Front Door Option" class="option-image" id="frontDoor-image">
+            <img src="images/front-door-standard.jpg" alt="Front Door Option" class="option-image" id="frontDoor-image" data-lightbox="frontDoor">
           </div>
           <div class="form-group">
             <label for="kitchenCabinets">Kitchen Cabinets ($0 - $2,000)</label>
@@ -463,7 +534,7 @@
               <option value="standard" data-price="1000">Standard ($1,000)</option>
               <option value="advanced" data-price="2000">Advanced ($2,000)</option>
             </select>
-            <img src="images/kitchen-cabinets-none.jpg" alt="Kitchen Cabinets Option" class="option-image" id="kitchenCabinets-image">
+            <img src="images/kitchen-cabinets-none.jpg" alt="Kitchen Cabinets Option" class="option-image" id="kitchenCabinets-image" data-lightbox="kitchenCabinets">
           </div>
           <div class="form-group">
             <label for="shower">Shower ($0 - $1,500)</label>
@@ -472,7 +543,7 @@
               <option value="standard" data-price="800">Standard ($800)</option>
               <option value="advanced" data-price="1500">Advanced ($1,500)</option>
             </select>
-            <img src="images/shower-none.jpg" alt="Shower Option" class="option-image" id="shower-image">
+            <img src="images/shower-none.jpg" alt="Shower Option" class="option-image" id="shower-image" data-lightbox="shower">
           </div>
           <div class="form-group">
             <label for="wallPaint">Wall Paint Color ($200)</label>
@@ -480,7 +551,7 @@
               <option value="grey" data-price="200">Grey ($200)</option>
               <option value="white" data-price="200">White ($200)</option>
             </select>
-            <img src="images/wall-paint-grey.jpg" alt="Wall Paint Option" class="option-image" id="wallPaint-image">
+            <img src="images/wall-paint-grey.jpg" alt="Wall Paint Option" class="option-image" id="wallPaint-image" data-lightbox="wallPaint">
           </div>
           <div class="form-group">
             <label for="flooring">Flooring ($0 - $1,200)</label>
@@ -490,7 +561,7 @@
               <option value="hardwood" data-price="1200">Hardwood ($1,200)</option>
               <option value="tile" data-price="800">Tile ($800)</option>
             </select>
-            <img src="images/flooring-none.jpg" alt="Flooring Option" class="option-image" id="flooring-image">
+            <img src="images/flooring-none.jpg" alt="Flooring Option" class="option-image" id="flooring-image" data-lightbox="flooring">
           </div>
           <div class="form-group">
             <label for="energyStorage">Energy Storage ($0 - $3,000)</label>
@@ -499,7 +570,7 @@
               <option value="standard_battery" data-price="1500">Standard Battery ($1,500)</option>
               <option value="high_capacity_battery" data-price="3000">High-Capacity Battery ($3,000)</option>
             </select>
-            <img src="images/energy-storage-none.jpg" alt="Energy Storage Option" class="option-image" id="energyStorage-image">
+            <img src="images/energy-storage-none.jpg" alt="Energy Storage Option" class="option-image" id="energyStorage-image" data-lightbox="energyStorage">
           </div>
           <div class="total-price" id="total-price">Total Price: $5,000</div>
           <button type="submit" class="form-button">Submit Preferences & Proceed to Payment</button>
@@ -507,6 +578,16 @@
             <p><small>(Powered by <a rel="nofollow" href="https://dz49.com">dz49</a>)</small></p>
           </div>
         </form>
+        <div class="preview-section">
+          <h3 class="preview-title">Your E.Z. Space Preview</h3>
+          <img src="images/preview-default.jpg" alt="Home Configuration Preview" class="preview-image" id="preview-image">
+          <p class="preview-text" id="preview-text">Select options to see your custom home configuration.</p>
+        </div>
+      </div>
+      <!-- Lightbox Modal -->
+      <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img src="" alt="Option Image" id="lightbox-image">
       </div>
     </section>
 
@@ -757,7 +838,7 @@
 
         updateSlidePosition();
 
-        // Form image and price updates
+        // Form image, price, and preview updates
         const basePrice = 5000; // Base shed cost
         const priceMap = {
           starlink: {
@@ -810,25 +891,65 @@
           }
         };
 
-        function updateTotalPrice() {
+        function updateTotalPriceAndPreview() {
           let total = basePrice;
+          let previewText = 'Your E.Z. Space: ';
+          const selections = {};
           document.querySelectorAll('select').forEach(select => {
             const value = select.value;
             const field = select.id;
             total += priceMap[field][value].price;
+            selections[field] = value;
             const imageElement = document.getElementById(`${field}-image`);
             imageElement.src = priceMap[field][value].image;
             imageElement.alt = `${field} Option`;
+            if (value !== 'none' && value !== 'no_shower') {
+              previewText += `${select.options[select.selectedIndex].text.split(' (')[0]}, `;
+            }
           });
+
+          // Update total price
           document.getElementById('total-price').textContent = `Total Price: $${total.toLocaleString()}`;
+          document.getElementById('total-price-input').value = total;
+
+          // Update preview
+          const previewImage = document.getElementById('preview-image');
+          const previewTextElement = document.getElementById('preview-text');
+          // Example: Construct preview image URL based on key selections (e.g., frontDoor and kitchenCabinets)
+          const previewImageKey = `${selections.frontDoor}-${selections.kitchenCabinets}`;
+          const previewImageUrl = `images/preview-${previewImageKey}.jpg`;
+          previewImage.src = previewImageUrl; // Replace with actual image path or fallback
+          previewTextElement.textContent = previewText.replace(/, $/, '') || 'Select options to see your custom home configuration.';
         }
 
-        document.querySelectorAll('select').forEach(select => {
-          select.addEventListener('change', updateTotalPrice);
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxClose = document.getElementById('lightbox-close');
+
+        document.querySelectorAll('.option-image').forEach(img => {
+          img.addEventListener('click', () => {
+            lightboxImage.src = img.src;
+            lightbox.style.display = 'flex';
+          });
         });
 
-        // Initialize total price and images
-        updateTotalPrice();
+        lightboxClose.addEventListener('click', () => {
+          lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+          }
+        });
+
+        document.querySelectorAll('select').forEach(select => {
+          select.addEventListener('change', updateTotalPriceAndPreview);
+        });
+
+        // Initialize total price, images, and preview
+        updateTotalPriceAndPreview();
       });
     </script>
   </body>
