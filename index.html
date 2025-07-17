@@ -112,7 +112,7 @@
               <div class="contact-field-wrap">
                 <div class="contact-form-field-wrap">
                   <label for="phone-number" class="contact-label">Phone Number</label>
-                  <input class="contact-text-field w-input" maxlength="256" name="Contact-Phone-Number" data-name="Contact Phone Number" placeholder="1234567890" type="tel" id="phone-number" required="" oninvalid="this.setCustomValidity('Please enter a valid phone number')">
+                  <input class="contact-text-field w-input" maxlength="256" name="Contact-Phone-Number" data-name="Contact Phone Number" placeholder="Enter your phone number" type="tel" id="phone-number" required="" oninvalid="this.setCustomValidity('Please enter a valid phone number')">
                 </div>
                 <div class="contact-form-field-wrap">
                   <label for="subject" class="contact-label">Subject</label>
@@ -309,6 +309,11 @@
     document.getElementById('phone-number').oninput = function() {
       this.setCustomValidity('');
     };
+    // Optional: Normalize phone number input by removing non-digit characters before submission
+    document.getElementById('wf-form-Contact-Email-Form').addEventListener('submit', function(e) {
+      const phoneInput = document.getElementById('phone-number');
+      phoneInput.value = phoneInput.value.replace(/\D/g, ''); // Remove all non-digit characters
+    });
   </script>
 </body>
 </html>
