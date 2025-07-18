@@ -22,22 +22,3 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
-.thumbnail-container {
-    display: grid !important; /* Force grid layout */
-    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
-    gap: 10px; /* Space between images */
-    width: 100%; /* Ensure container takes full width */
-    max-width: 600px; /* Adjust to match your desired grid width */
-    margin: 0 auto; /* Center the container */
-}
-
-.thumbnail-container .footer-lightbox-wrap {
-    display: block; /* Ensure each <a> is a block */
-    width: 100%; /* Full width of grid cell */
-}
-
-.thumbnail-container .thumbnail-image {
-    width: 100%; /* Image fills the <a> tag */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove any inline spacing */
-}
