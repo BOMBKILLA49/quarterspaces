@@ -40,7 +40,7 @@
               <div class="nav-link w-dropdown-toggle">
           </div>
           <div class="nav-button-wrap">
-            <a href="#" class="nav-button w-button">Contact Us</a>
+            <a href="contact.html" class="nav-button w-button">Contact Us</a>
           </div>
         </nav>
         <div class="menu-button w-nav-button">
@@ -630,7 +630,47 @@
         </div>
         <div data-w-id="8f06ba6d-996d-60d7-27d9-96b872c18321" class="footer-properties-wrap">
           <h4 class="footer-link-title">Our Properties</h4>
-          <a href="properties.html" aria-current="page" class="footer-lightbox-wrap w-inline-block w--current"><img src="images/thumbnail-1_1thumbnail-1.jpg" loading="lazy" alt="thumbnail light box image" class="thumbnail-image"><img src="images/thumbnail-2_1thumbnail-2.jpg" loading="lazy" alt="thumbnail light box image" class="thumbnail-image"><img src="images/thumbnail-3_1thumbnail-3.jpg" loading="lazy" alt="thumbnail light box image" class="thumbnail-image"><img src="images/thumbnail-4_1thumbnail-4.jpg" loading="lazy" alt="thumbnail light box image" class="thumbnail-image"><img src="images/thumbnail-6_1thumbnail-6.jpg" loading="lazy" alt="thumbnail light box image" class="thumbnail-image"><img src="images/thumbnail-5_1thumbnail-5.jpg" loading="lazy" alt="thumbnail light box image" class="thumbnail-image"></a>
+<div class="thumbnail-container">
+    <a href="/back-yard-bbq.html" aria-current="page" class="footer-lightbox-wrap w-inline-block w--current">
+        <img src="images/tiny-home-thumbnail-1.jpg" loading="lazy" alt="thumbnail light box image" class="thumbnail-image">
+    </a>
+    <a href="/disabled_tiny_home.html" class="footer-lightbox-wrap w-inline-block">
+        <img src="images/tiny-home-thumbnail-2.jpg" loading="lazy" alt="thumbnail light box image" class="thumbnail-image">
+    </a>
+    <a href="/cozy-quarters.html" class="footer-lightbox-wrap w-inline-block">
+        <img src="images/tiny-home-thumbnail-3.jpg" loading="lazy" alt="thumbnail light box image" class="thumbnail-image">
+    </a>
+    <a href="/comingsoon.html" class="footer-lightbox-wrap w-inline-block">
+        <img src="images/tiny-home-thumbnail-4.jpg" loading="lazy" alt="thumbnail light box image" class="thumbnail-image">
+    </a>
+</div>
+          
+<style>
+.thumbnail-container {
+    display: grid !important; /* Use grid for 2x2 layout */
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    gap: 10px; /* Space between images */
+    width: 100%; /* Full width of parent */
+    max-width: 600px; /* Adjust to desired grid width */
+    margin: 0 auto; /* Center the grid */
+}
+
+.thumbnail-container .footer-lightbox-wrap {
+    display: block !important; /* Override Webflow's inline-block */
+    width: 100%; /* Fill grid cell */
+}
+
+.thumbnail-container .thumbnail-image {
+    width: 100%; /* Image fills its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove inline spacing */
+}
+
+/* Override Webflow's inline-block if causing issues */
+.thumbnail-container .w-inline-block {
+    display: block !important;
+}
+</style>
         </div>
       </div>
       <div data-w-id="8f06ba6d-996d-60d7-27d9-96b872c18325" class="copyright-wrap">
@@ -655,8 +695,7 @@
       <p class="hireus-content">Connect with a Webflow Expert to create a website using this template.<a href="#" target="_blank" class="hireus-link">Learn More</a>
       </p>
       <div class="hireus-button-wrap">
-        <a href="https://calendly.com/victorflow/30min" target="_blank" class="hireus-orange-button w-button">Schedule A Meeting<br></a>
-        <a href="https://www.victorflow.com/get-a-quote" target="_blank" class="get-a-quote-button w-inline-block">
+        <a href="https://calendly.com/victorflow/30min" target="_blank" class="hireus-orange-button w-button">targets://webflow.com/templates/html/plotland-real-estate-website-template" target="_blank" class="get-a-quote-button w-inline-block">
           <div class="get-a-quote-button-wrap">
             <div>Get Your Quote</div>
           </div>
