@@ -22,3 +22,19 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
+.thumbnail-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
+    gap: 10px; /* Adjust gap between images as needed */
+    justify-items: center; /* Center images horizontally */
+    align-items: center; /* Center images vertically */
+}
+
+.footer-lightbox-wrap {
+    display: block; /* Ensure each <a> behaves as a block */
+}
+
+.thumbnail-image {
+    width: 100%; /* Ensure images fill their container */
+    height: auto; /* Maintain aspect ratio */
+}
