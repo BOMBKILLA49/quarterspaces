@@ -23,15 +23,14 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 .thumbnail-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
-    gap: 10px; /* Adjust gap between images as needed */
-    justify-items: center; /* Center images horizontally */
-    align-items: center; /* Center images vertically */
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to create rows */
+    gap: 10px; /* Adjust gap between images */
+    justify-content: center; /* Center the images */
 }
 
 .footer-lightbox-wrap {
-    display: block; /* Ensure each <a> behaves as a block */
+    flex: 0 0 calc(50% - 5px); /* Two images per row, accounting for gap */
 }
 
 .thumbnail-image {
