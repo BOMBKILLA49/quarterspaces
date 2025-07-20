@@ -22,3 +22,82 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
+<style>
+  .seller-info-table {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: 'Syne', sans-serif;
+    color: #2c3e50;
+  }
+
+  .seller-info-table th, .seller-info-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .seller-info-table th {
+    background-color: #e0f7ff;
+    font-weight: 700;
+    font-size: 16px;
+    color: #2c3e50;
+  }
+
+  .seller-info-table td {
+    font-size: 14px;
+    color: #7f8c8d;
+  }
+
+  .seller-info-table .table-link {
+    color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .seller-info-table .table-link:hover {
+    color: #3498db;
+  }
+
+  .seller-info-table .social-media-cell {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .seller-info-table .property-social-icon {
+    background-color: rgb(47, 47, 48);
+    padding: 8px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+  }
+
+  .seller-info-table .social-initial-icon,
+  .seller-info-table .social-hover-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .seller-info-table th, .seller-info-table td {
+      padding: 8px 10px;
+      font-size: 14px;
+    }
+
+    .seller-info-table .property-social-icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    .seller-info-table .social-initial-icon,
+    .seller-info-table .social-hover-icon {
+      width: 14px;
+      height: 14px;
+    }
+  }
+</style>
