@@ -125,6 +125,7 @@
     /* Seller Info Table Styles */
     .seller-info-table {
       width: 100%;
+      max-width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
       font-family: 'Syne', sans-serif;
@@ -132,40 +133,47 @@
       background-color: #fff;
     }
 
-    .seller-info-table th,
-    .seller-info-table td {
-      padding: 12px 15px;
-      text-align: left;
+    .seller-info-table .model-block-table-row {
       border-bottom: 1px solid #e0e0e0;
-      font-size: 14px;
     }
 
-    .seller-info-table th {
-      background-color: #f5f5f5;
+    .seller-info-table .model-table-key {
+      width: 30%;
+      padding: 10px 15px;
       font-weight: 700;
-      font-size: 16px;
-      text-transform: uppercase;
+      font-size: 14px;
+      text-align: left;
+      background-color: #f5f5f5;
+      vertical-align: top;
     }
 
-    .seller-info-table td a {
+    .seller-info-table td {
+      padding: 10px 15px;
+      font-size: 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .seller-info-table a {
       color: #2c3e50;
       text-decoration: none;
     }
 
-    .seller-info-table td a:hover {
+    .seller-info-table a:hover {
       text-decoration: underline;
     }
 
     .seller-info-table .social-media-icons-wrap {
       display: flex;
-      gap: 10px;
+      gap: 8px;
+      flex-wrap: wrap;
       align-items: center;
     }
 
     .seller-info-table .property-social-icon {
       display: inline-block;
-      width: 32px;
-      height: 32px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
       background-color: rgb(47, 47, 48);
       position: relative;
@@ -178,8 +186,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 16px;
-      height: 16px;
+      width: 12px;
+      height: 12px;
     }
 
     .seller-info-table .social-initial-icon {
@@ -200,7 +208,9 @@
 
     /* Ensure table fits within container */
     .property-agent-details-wrap {
-      overflow-x: auto;
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
     }
 
     /* Responsive Design */
@@ -218,32 +228,40 @@
         font-size: 18px;
       }
 
-      .seller-info-table th,
+      .seller-info-table .model-table-key,
       .seller-info-table td {
         font-size: 12px;
         padding: 8px 10px;
       }
 
       .seller-info-table .property-social-icon {
-        width: 28px;
-        height: 28px;
+        width: 20px;
+        height: 20px;
       }
 
       .seller-info-table .social-initial-icon,
       .seller-info-table .social-hover-icon {
-        width: 14px;
-        height: 14px;
+        width: 10px;
+        height: 10px;
       }
     }
 
     @media (max-width: 479px) {
-      .seller-info-table {
+      .seller-info-table .model-table-key,
+      .seller-info-table td {
         font-size: 10px;
+        padding: 6px 8px;
       }
 
-      .seller-info-table th,
-      .seller-info-table td {
-        padding: 6px 8px;
+      .seller-info-table .property-social-icon {
+        width: 18px;
+        height: 18px;
+      }
+
+      .seller-info-table .social-initial-icon,
+      .seller-info-table .social-hover-icon {
+        width: 9px;
+        height: 9px;
       }
     }
   </style>
@@ -337,7 +355,7 @@
       <div data-w-id="2a2e5bea-e296-2f74-f1fd-a039523c079d" style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="property-post-main-wrap">
         <div class="property-post-wrap">
           <div class="property-location-wrap">
-            <div class="property-address-wrap"><img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6528f48cbbea9ba28c66fa1c_Location.svg" loading="lazy" alt="Loaction">
+            <div class="property-address-wrap"><img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6528f48cbbea9ba28c66fa1c_Location.svg" loading="lazy" alt="Location">
               <p class="property-location">1261 Frontage RD NW, NM 87801</p>
             </div>
             <div class="meta-separator"></div><a href="/property-category/residential" class="property-post-category">Residential</a>
@@ -405,21 +423,25 @@
               <h2 class="detail-wrap-title">Seller Info</h2>
               <p class="property-agent-about-content">Contact the seller directly for a prompt response.</p>
               <table class="seller-info-table">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Role</th>
-                    <th>Phone</th>
-                    <th>Email</th>
-                    <th>Social Media</th>
-                  </tr>
-                </thead>
                 <tbody>
-                  <tr>
+                  <tr class="model-block-table-row">
+                    <td class="model-table-key">Name:</td>
                     <td><a href="/property-agents/john-doe" class="property-agent-name">John Doe</a></td>
+                  </tr>
+                  <tr class="model-block-table-row">
+                    <td class="model-table-key">Role:</td>
                     <td>Property Manager</td>
+                  </tr>
+                  <tr class="model-block-table-row">
+                    <td class="model-table-key">Phone:</td>
                     <td><a href="tel:+1-555-123-4567" class="contact-text">(555) 123-4567</a></td>
+                  </tr>
+                  <tr class="model-block-table-row">
+                    <td class="model-table-key">Email:</td>
                     <td><a href="mailto:john.doe@example.com" class="contact-text">john.doe@example.com</a></td>
+                  </tr>
+                  <tr class="model-block-table-row">
+                    <td class="model-table-key">Social Media:</td>
                     <td>
                       <div class="social-media-icons-wrap property-post">
                         <a href="https://www.twitter.com/johndoe" target="_blank" class="property-social-icon w-inline-block">
