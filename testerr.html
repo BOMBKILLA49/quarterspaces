@@ -129,37 +129,47 @@
       margin-top: 20px;
       font-family: 'Syne', sans-serif;
       color: #2c3e50;
+      background-color: #fff;
     }
 
     .seller-info-table th,
     .seller-info-table td {
-      padding: 12px;
+      padding: 12px 15px;
       text-align: left;
       border-bottom: 1px solid #e0e0e0;
+      font-size: 14px;
     }
 
     .seller-info-table th {
       background-color: #f5f5f5;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 16px;
+      text-transform: uppercase;
     }
 
-    .seller-info-table td {
-      font-size: 14px;
+    .seller-info-table td a {
+      color: #2c3e50;
+      text-decoration: none;
+    }
+
+    .seller-info-table td a:hover {
+      text-decoration: underline;
     }
 
     .seller-info-table .social-media-icons-wrap {
       display: flex;
       gap: 10px;
+      align-items: center;
     }
 
     .seller-info-table .property-social-icon {
       display: inline-block;
-      width: 40px;
-      height: 40px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       background-color: rgb(47, 47, 48);
       position: relative;
+      transition: background-color 0.3s;
     }
 
     .seller-info-table .social-initial-icon,
@@ -168,8 +178,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 20px;
-      height: 20px;
+      width: 16px;
+      height: 16px;
     }
 
     .seller-info-table .social-initial-icon {
@@ -186,6 +196,11 @@
 
     .seller-info-table .property-social-icon:hover .social-hover-icon {
       opacity: 1;
+    }
+
+    /* Ensure table fits within container */
+    .property-agent-details-wrap {
+      overflow-x: auto;
     }
 
     /* Responsive Design */
@@ -206,7 +221,29 @@
       .seller-info-table th,
       .seller-info-table td {
         font-size: 12px;
-        padding: 8px;
+        padding: 8px 10px;
+      }
+
+      .seller-info-table .property-social-icon {
+        width: 28px;
+        height: 28px;
+      }
+
+      .seller-info-table .social-initial-icon,
+      .seller-info-table .social-hover-icon {
+        width: 14px;
+        height: 14px;
+      }
+    }
+
+    @media (max-width: 479px) {
+      .seller-info-table {
+        font-size: 10px;
+      }
+
+      .seller-info-table th,
+      .seller-info-table td {
+        padding: 6px 8px;
       }
     }
   </style>
@@ -222,10 +259,7 @@
 
     // Function to update the slideshow
     function updateSlideshow() {
-      // Move the slides container
       slides.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-      // Update active dot
       dots.forEach((dot, index) => {
         dot.classList.toggle('active', index === currentSlide);
       });
@@ -258,7 +292,7 @@
     let autoPlayInterval = setInterval(function () {
       currentSlide = (currentSlide + 1) % slideElements.length;
       updateSlideshow();
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
 
     // Pause auto-play on hover
     const slideshowContainer = document.querySelector('.slideshow-container');
@@ -274,36 +308,35 @@
   });
 </script>
 <body>
-  <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease"
-    role="banner" class="navigation-bar w-nav">
+  <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navigation-bar w-nav">
     <div class="container w-container">
       <div class="nav-wrap">
-        <a href="index.html" aria-current="page" class="brand-logo w-nav-brand w--current"><img
-            src="images/brand-logo.svg" loading="lazy" alt="Brand Logo" class="logo-image"></a>
+        <a href="index.html" aria-current="page" class="brand-logo w-nav-brand w--current"><img src="images/brand-logo.svg" loading="lazy" alt="Brand Logo" class="logo-image"></a>
         <nav role="navigation" class="nav-menu w-nav-menu">
           <div class="nav-link-wrap">
             <a href="index.html" aria-current="page" class="nav-link w--current">Home</a>
-            <a href="about.html" class="nav-link"> right">About</a>
+            <a href="about.html" class="nav-link">About</a>
             <a href="all-quarter-spaces.html" class="nav-link">Spaces</a>
             <div data-hover="true" data-delay="0" class="nav-dropdowm w-dropdown">
-              <div class="nav-link w-dropdown-toggle">
+              <div class="nav-link w-dropdown-toggle"></div>
+            </div>
+            <div class="nav-button-wrap">
+              <a href="contact.html" class="nav-button w-button">Contact Us</a>
+            </div>
+          </nav>
+          <div class="menu-button w-nav-button">
+            <div class="w-icon-nav-menu"></div>
           </div>
-          <div class="nav-button-wrap">
-            <a href="contact.html" class="nav-button w-button">Contact Us</a>
-          </div>
-        </nav>
-        <div class="menu-button w-nav-button">
-          <div class="w-icon-nav-menu"></div>
         </div>
       </div>
     </div>
   </div>
   
   <section class="property-post-section">
-    <!-- [Content remains unchanged] -->
     <div class="w-layout-blockcontainer container w-container">
       <div data-w-id="2a2e5bea-e296-2f74-f1fd-a039523c079d" style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="property-post-main-wrap">
-        <div class="property location="1261 Frontage RD NW, NM 87801" class="property-location-wrap">
+        <div class="property-post-wrap">
+          <div class="property-location-wrap">
             <div class="property-address-wrap"><img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6528f48cbbea9ba28c66fa1c_Location.svg" loading="lazy" alt="Loaction">
               <p class="property-location">1261 Frontage RD NW, NM 87801</p>
             </div>
@@ -370,7 +403,7 @@
             <!-- Seller Info as Table -->
             <div class="property-agent-details-wrap">
               <h2 class="detail-wrap-title">Seller Info</h2>
-              <p class="property-agent-about-content">For instant response, contact the seller directly via phone, email, or social media.</p>
+              <p class="property-agent-about-content">Contact the seller directly for a prompt response.</p>
               <table class="seller-info-table">
                 <thead>
                   <tr>
@@ -389,21 +422,21 @@
                     <td><a href="mailto:john.doe@example.com" class="contact-text">john.doe@example.com</a></td>
                     <td>
                       <div class="social-media-icons-wrap property-post">
-                        <a style="background-color: rgb(47, 47, 48);" href="https://www.twitter.com/johndoe" target="_blank" class="property-social-icon w-inline-block">
-                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/655cdb59f4386a11a7d56dd0_twitter-initial.svg" loading="lazy" alt="social media icon" class="social-initial-icon">
-                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/655cdb59f98a4d738493665e_twitter-hover.svg" loading="lazy" alt="social media icon" class="social-hover-icon">
+                        <a href="https://www.twitter.com/johndoe" target="_blank" class="property-social-icon w-inline-block">
+                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/655cdb59f4386a11a7d56dd0_twitter-initial.svg" loading="lazy" alt="Twitter icon" class="social-initial-icon">
+                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/655cdb59f98a4d738493665e_twitter-hover.svg" loading="lazy" alt="Twitter hover icon" class="social-hover-icon">
                         </a>
-                        <a href="https://www.instagram.com/johndoe" target="_blank" class="property-social-icon w-inline-block" style="background-color: rgb(47, 47, 48);">
-                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc9209a3ecfde2355c84_Insta%20I.svg" loading="lazy" alt="social media icon" class="social-initial-icon">
-                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc92c8ae915507867c75_Insta%20h.svg" loading="lazy" alt="social media icon" class="social-hover-icon">
+                        <a href="https://www.instagram.com/johndoe" target="_blank" class="property-social-icon w-inline-block">
+                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc9209a3ecfde2355c84_Insta%20I.svg" loading="lazy" alt="Instagram icon" class="social-initial-icon">
+                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc92c8ae915507867c75_Insta%20h.svg" loading="lazy" alt="Instagram hover icon" class="social-hover-icon">
                         </a>
-                        <a href="https://www.linkedin.com/in/johndoe" target="_blank" class="property-social-icon w-inline-block" style="background-color: rgb(47, 47, 48);">
-                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc92aa94a232d7701cf1_In%20I.svg" loading="lazy" alt="linked in" class="social-initial-icon">
-                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc92ac2c2f7895efecc5_In%20H.svg" loading="lazy" alt="" class="social-hover-icon">
+                        <a href="https://www.linkedin.com/in/johndoe" target="_blank" class="property-social-icon w-inline-block">
+                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc92aa94a232d7701cf1_In%20I.svg" loading="lazy" alt="LinkedIn icon" class="social-initial-icon">
+                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc92ac2c2f7895efecc5_In%20H.svg" loading="lazy" alt="LinkedIn hover icon" class="social-hover-icon">
                         </a>
-                        <a href="https://www.facebook.com/johndoe" target="_blank" class="property-social-icon w-inline-block" style="background-color: rgb(47, 47, 48);">
-                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc93bbff8cdac0b853a3_Fb%20I.svg" loading="lazy" alt="" class="social-initial-icon">
-                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc91c597a48dc0f381bd_Fb%20H.svg" loading="lazy" alt="bg" class="social-hover-icon">
+                        <a href="https://www.facebook.com/johndoe" target="_blank" class="property-social-icon w-inline-block">
+                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc93bbff8cdac0b853a3_Fb%20I.svg" loading="lazy" alt="Facebook icon" class="social-initial-icon">
+                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc91c597a48dc0f381bd_Fb%20H.svg" loading="lazy" alt="Facebook hover icon" class="social-hover-icon">
                         </a>
                       </div>
                     </td>
@@ -502,7 +535,6 @@
     </div>
   </section>
 
-  <!-- [Remaining sections remain unchanged] -->
   <section class="property-details-list-section">
     <div class="w-layout-blockcontainer container w-container">
       <div data-w-id="99ee4e97-8653-0364-6ffe-1a706836d572" style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="post-title-wrap">
@@ -622,52 +654,46 @@
         </div>
         <div data-w-id="8f06ba6d-996d-60d7-27d9-96b872c18321" class="footer-properties-wrap">
           <h4 class="footer-link-title">Our Properties</h4>
-<div class="thumbnail-container">
-    <a href="/back-yard-bbq.html" aria-current="page" class="footer-lightbox-wrap w-inline-block w--current">
-        <img src="images/tiny-home-thumbnail-1.jpg" loading="lazy" alt="thumbnail light box image" class="thumbnail-image">
-    </a>
-    <a href="/disabled_tiny_home.html" class="footer-lightbox-wrap w-inline-block">
-        <img src="images/tiny-home-thumbnail-2.jpg" loading="lazy" alt="thumbnail light box image" class="thumbnail-image">
-    </a>
-    <a href="/cozy-quarters.html" class="footer-lightbox-wrap w-inline-block">
-        <img src="images/tiny-home-thumbnail-3.jpg" loading="lazy" alt="thumbnail light box image" class="thumbnail-image">
-    </a>
-    <a href="/comingsoon.html" class="footer-lightbox-wrap w-inline-block">
-        <img src="images/tiny-home-thumbnail-4.jpg" loading="lazy" alt="thumbnail light box image" class="thumbnail-image">
-    </a>
-</div>
-          
-<style>
-.thumbnail-container {
-    display: grid !important; /* Use grid for 2x2 layout */
-    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
-    gap: 10px; /* Space between images */
-    width: 100%; /* Full width of parent */
-    max-width: 600px; /* Adjust to desired grid width */
-    margin: 0 auto; /* Center the grid */
-}
-
-.thumbnail-container .footer-lightbox-wrap {
-    display: block !important; /* Override Webflow's inline-block */
-    width: 100%; /* Fill grid cell */
-}
-
-.thumbnail-container .thumbnail-image {
-    width: 100%; /* Image fills its container */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove inline spacing */
-}
-
-/* Override Webflow's inline-block if causing issues */
-.thumbnail-container .w-inline-block {
-    display: block !important;
-}
-</style>
+          <div class="thumbnail-container">
+            <a href="/back-yard-bbq.html" aria-current="page" class="footer-lightbox-wrap w-inline-block w--current">
+              <img src="images/tiny-home-thumbnail-1.jpg" loading="lazy" alt="thumbnail light box image" class="thumbnail-image">
+            </a>
+            <a href="/disabled_tiny_home.html" class="footer-lightbox-wrap w-inline-block">
+              <img src="images/tiny-home-thumbnail-2.jpg" loading="lazy" alt="thumbnail light box image" class="thumbnail-image">
+            </a>
+            <a href="/cozy-quarters.html" class="footer-lightbox-wrap w-inline-block">
+              <img src="images/tiny-home-thumbnail-3.jpg" loading="lazy" alt="thumbnail light box image" class="thumbnail-image">
+            </a>
+            <a href="/comingsoon.html" class="footer-lightbox-wrap w-inline-block">
+              <img src="images/tiny-home-thumbnail-4.jpg" loading="lazy" alt="thumbnail light box image" class="thumbnail-image">
+            </a>
+          </div>
+          <style>
+            .thumbnail-container {
+              display: grid !important;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 10px;
+              width: 100%;
+              max-width: 600px;
+              margin: 0 auto;
+            }
+            .thumbnail-container .footer-lightbox-wrap {
+              display: block !important;
+              width: 100%;
+            }
+            .thumbnail-container .thumbnail-image {
+              width: 100%;
+              height: auto;
+              display: block;
+            }
+            .thumbnail-container .w-inline-block {
+              display: block !important;
+            }
+          </style>
         </div>
       </div>
       <div data-w-id="8f06ba6d-996d-60d7-27d9-96b872c18325" class="copyright-wrap">
-        <p class="copyright-content">Copyright © <a href="index.html" class="company-link">Quarterspaces</a> | Designed By <a href="#" target="_blank" class="company-link">Quarterspaces </a>- Powered By <a href="#" target="_blank" class="company-link">Quarterspaces</a>
-        </p>
+        <p class="copyright-content">Copyright © <a href="index.html" class="company-link">Quarterspaces</a> | Designed By <a href="#" target="_blank" class="company-link">Quarterspaces </a>- Powered By <a href="#" target="_blank" class="company-link">Quarterspaces</a></p>
         <div class="social-media">
           <p class="copyright-content">Follow us on</p>
           <div class="social-media-icons-wrap">
@@ -684,10 +710,9 @@
   <a href="https://www.tiktok.com/@quarterspaces" target="_blank" class="buy-template-badge w-inline-block"><img src="images/buy-template-badge.png" loading="lazy" width="151" alt="Badge Image" class="badge-image"></a>
   <div class="hireus-badge">
     <div class="hireus-badge-wrap">
-      <p class="hireus-content">Connect with a Quarterspace expert to get a quote.<a href="#" target="_blank" class="hireus-link">Learn More</a>
-      </p>
+      <p class="hireus-content">Connect with a Quarterspace expert to get a quote.<a href="#" target="_blank" class="hireus-link">Learn More</a></p>
       <div class="hireus-button-wrap">
-        <a href="contact.html" target="_blank" class="hireus-orange-button w-button">Get a free quote now">
+        <a href="contact.html" target="_blank" class="hireus-orange-button w-button">Get a free quote now
           <div class="get-a-quote-button-wrap">
             <div>Get Your Quote</div>
           </div>
