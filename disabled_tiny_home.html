@@ -139,6 +139,68 @@
     }
   </style>
 </head>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const slides = document.querySelector('.slides');
+    const slideElements = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+
+    // Function to update the slideshow
+    function updateSlideshow() {
+      // Move the slides container
+      slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+      // Update active dot
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+    }
+
+    // Next button click
+    nextBtn.addEventListener('click', function () {
+      currentSlide = (currentSlide + 1) % slideElements.length;
+      updateSlideshow();
+    });
+
+    // Previous button click
+    prevBtn.addEventListener('click', function () {
+      currentSlide = (currentSlide - 1 + slideElements.length) % slideElements.length;
+      updateSlideshow();
+    });
+
+    // Dot click
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', function () {
+        currentSlide = index;
+        updateSlideshow();
+      });
+    });
+
+    // Initialize slideshow
+    updateSlideshow();
+
+    // Optional: Auto-play slideshow
+    let autoPlayInterval = setInterval(function () {
+      currentSlide = (currentSlide + 1) % slideElements.length;
+      updateSlideshow();
+    }, 5000); // Change slide every 5 seconds
+
+    // Pause auto-play on hover
+    const slideshowContainer = document.querySelector('.slideshow-container');
+    slideshowContainer.addEventListener('mouseenter', function () {
+      clearInterval(autoPlayInterval);
+    });
+    slideshowContainer.addEventListener('mouseleave', function () {
+      autoPlayInterval = setInterval(function () {
+        currentSlide = (currentSlide + 1) % slideElements.length;
+        updateSlideshow();
+      }, 5000);
+    });
+  });
+</script>
 <body>
   <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease"
     role="banner" class="navigation-bar w-nav">
