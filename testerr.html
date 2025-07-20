@@ -122,6 +122,72 @@
       background-color: #2c3e50;
     }
 
+    /* Seller Info Table Styles */
+    .seller-info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-family: 'Syne', sans-serif;
+      color: #2c3e50;
+    }
+
+    .seller-info-table th,
+    .seller-info-table td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .seller-info-table th {
+      background-color: #f5f5f5;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .seller-info-table td {
+      font-size: 14px;
+    }
+
+    .seller-info-table .social-media-icons-wrap {
+      display: flex;
+      gap: 10px;
+    }
+
+    .seller-info-table .property-social-icon {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgb(47, 47, 48);
+      position: relative;
+    }
+
+    .seller-info-table .social-initial-icon,
+    .seller-info-table .social-hover-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+    }
+
+    .seller-info-table .social-initial-icon {
+      opacity: 1;
+    }
+
+    .seller-info-table .social-hover-icon {
+      opacity: 0;
+    }
+
+    .seller-info-table .property-social-icon:hover .social-initial-icon {
+      opacity: 0;
+    }
+
+    .seller-info-table .property-social-icon:hover .social-hover-icon {
+      opacity: 1;
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
       .slide img {
@@ -135,6 +201,12 @@
       .nav-btn {
         padding: 10px;
         font-size: 18px;
+      }
+
+      .seller-info-table th,
+      .seller-info-table td {
+        font-size: 12px;
+        padding: 8px;
       }
     }
   </style>
@@ -211,7 +283,7 @@
         <nav role="navigation" class="nav-menu w-nav-menu">
           <div class="nav-link-wrap">
             <a href="index.html" aria-current="page" class="nav-link w--current">Home</a>
-            <a href="about.html" class="nav-link">About</a>
+            <a href="about.html" class="nav-link"> right">About</a>
             <a href="all-quarter-spaces.html" class="nav-link">Spaces</a>
             <div data-hover="true" data-delay="0" class="nav-dropdowm w-dropdown">
               <div class="nav-link w-dropdown-toggle">
@@ -231,8 +303,7 @@
     <!-- [Content remains unchanged] -->
     <div class="w-layout-blockcontainer container w-container">
       <div data-w-id="2a2e5bea-e296-2f74-f1fd-a039523c079d" style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="property-post-main-wrap">
-        <div class="property-post-wrap">
-          <div class="property-location-wrap">
+        <div class="property location="1261 Frontage RD NW, NM 87801" class="property-location-wrap">
             <div class="property-address-wrap"><img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6528f48cbbea9ba28c66fa1c_Location.svg" loading="lazy" alt="Loaction">
               <p class="property-location">1261 Frontage RD NW, NM 87801</p>
             </div>
@@ -296,24 +367,51 @@
         </div>
         <div class="w-layout-blockcontainer container w-container">
           <div data-w-id="34a99630-9e94-fc0a-e78f-cbaa5834480e" style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="property-sub-wrap">
-            <!-- [Agent and Contact Form content remains unchanged] -->
+            <!-- Seller Info as Table -->
             <div class="property-agent-details-wrap">
               <h2 class="detail-wrap-title">Seller Info</h2>
-              <p class="property-agent-about-content">For instant response, contact seller directly via social media.</p>
-              <div class="property-agent-profile-wrap"><a href="/property-agents/daniel-james" class="property-agent-image-wrap w-inline-block"><img alt="agent image" loading="lazy" src="images/dz.jpg"></a>
-                <div class="property-agent-profile"><a href="/property-agents/daniel-james" class="property-agent-name">Dillon Zimmerman</a>
-                  <p class="team-member-role">Business Owner</p>
-                </div>
-              </div>
-              <div class="property-agent-work-details">
-                <div class="work-details-list-wrap">
-                </div>
-                <div class="work-details-list-wrap">
-                  <h3 class="property-agent-details-title">Share on  :</h3>
-                  <div class="social-media-icons-wrap property-post"><a style="background-color: rgb(47, 47, 48);" href="https://www.twitter.com" target="_blank" class="property-social-icon w-inline-block"><img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/655cdb59f4386a11a7d56dd0_twitter-initial.svg" loading="lazy" style="opacity: 1;" alt="social media icon" class="social-initial-icon"><img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/655cdb59f98a4d738493665e_twitter-hover.svg" loading="lazy" style="opacity: 0;" alt="social media icon" class="social-hover-icon"></a><a href="https://www.instagram.com" target="_blank" class="property-social-icon w-inline-block" style="background-color: rgb(47, 47, 48);"><img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc9209a3ecfde2355c84_Insta%20I.svg" loading="lazy" alt="social media icon" class="social-initial-icon" style="opacity: 1;"><img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc92c8ae915507867c75_Insta%20h.svg" loading="lazy" alt="social media icon" class="social-hover-icon" style="opacity: 0;"></a><a href="https://www.linkedin.com" target="_blank" class="property-social-icon w-inline-block" style="background-color: rgb(47, 47, 48);"><img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc92aa94a232d7701cf1_In%20I.svg" loading="lazy" alt="linked in" class="social-initial-icon" style="opacity: 1;"><img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc92ac2c2f7895efecc5_In%20H.svg" loading="lazy" alt="" class="social-hover-icon" style="opacity: 0;"></a><a href="https://www.facebook.com" target="_blank" class="property-social-icon w-inline-block" style="background-color: rgb(47, 47, 48);"><img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc93bbff8cdac0b853a3_Fb%20I.svg" loading="lazy" alt="" class="social-initial-icon" style="opacity: 1;"><img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc91c597a48dc0f381bd_Fb%20H.svg" loading="lazy" alt="bg" class="social-hover-icon" style="opacity: 0;"></a></div>
-                </div>
-              </div>
+              <p class="property-agent-about-content">For instant response, contact the seller directly via phone, email, or social media.</p>
+              <table class="seller-info-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Social Media</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="/property-agents/john-doe" class="property-agent-name">John Doe</a></td>
+                    <td>Property Manager</td>
+                    <td><a href="tel:+1-555-123-4567" class="contact-text">(555) 123-4567</a></td>
+                    <td><a href="mailto:john.doe@example.com" class="contact-text">john.doe@example.com</a></td>
+                    <td>
+                      <div class="social-media-icons-wrap property-post">
+                        <a style="background-color: rgb(47, 47, 48);" href="https://www.twitter.com/johndoe" target="_blank" class="property-social-icon w-inline-block">
+                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/655cdb59f4386a11a7d56dd0_twitter-initial.svg" loading="lazy" alt="social media icon" class="social-initial-icon">
+                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/655cdb59f98a4d738493665e_twitter-hover.svg" loading="lazy" alt="social media icon" class="social-hover-icon">
+                        </a>
+                        <a href="https://www.instagram.com/johndoe" target="_blank" class="property-social-icon w-inline-block" style="background-color: rgb(47, 47, 48);">
+                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc9209a3ecfde2355c84_Insta%20I.svg" loading="lazy" alt="social media icon" class="social-initial-icon">
+                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc92c8ae915507867c75_Insta%20h.svg" loading="lazy" alt="social media icon" class="social-hover-icon">
+                        </a>
+                        <a href="https://www.linkedin.com/in/johndoe" target="_blank" class="property-social-icon w-inline-block" style="background-color: rgb(47, 47, 48);">
+                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc92aa94a232d7701cf1_In%20I.svg" loading="lazy" alt="linked in" class="social-initial-icon">
+                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc92ac2c2f7895efecc5_In%20H.svg" loading="lazy" alt="" class="social-hover-icon">
+                        </a>
+                        <a href="https://www.facebook.com/johndoe" target="_blank" class="property-social-icon w-inline-block" style="background-color: rgb(47, 47, 48);">
+                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc93bbff8cdac0b853a3_Fb%20I.svg" loading="lazy" alt="" class="social-initial-icon">
+                          <img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/6527cc91c597a48dc0f381bd_Fb%20H.svg" loading="lazy" alt="bg" class="social-hover-icon">
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
+            <!-- Contact Form remains unchanged -->
             <div class="container">
               <div class="row align-items-center mt-n5">
                 <div class="col-lg-6 mt-5">
@@ -466,11 +564,7 @@
                   </div>
                 </div><a data-w-id="99ee4e97-8653-0364-6ffe-1a706836d590" href="/cozy-quarters.html" class="view-details-link property w-inline-block"><img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/655c9e75fd70c0efa5472386_view-details-icon.svg" loading="lazy" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(97.1964deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform;" data-w-id="99ee4e97-8653-0364-6ffe-1a706836d591" alt="rotate icon for blog and property post" class="circle-rotate-image">
                   <div style="background-color: rgb(239, 239, 239);" class="social-icon-bg"><img src="https://assets-global.website-files.com/651ff0c7ce7fa29d3b9714ac/655c9c3365cc6fe3e86950df_right-arrow.svg" loading="lazy" alt="arrow for property list, blog list and testimonial sliders" class="up-cross-arrow-icon"></div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                </a>
               </div>
             </div>
           </div>
